@@ -80,6 +80,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       rtlMirroring: {
         type: Boolean,
         value: false
+      },
+      /**
+       * Sets custom view box for svg icon set. 
+       */
+      viewBox: {
+        type: String
       }
     },
 
@@ -224,7 +230,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (mirrorAllowed && content.hasAttribute('mirror-in-rtl')) {
           cssText += '-webkit-transform:scale(-1,1);transform:scale(-1,1);';
         }
-
+        var viewBox = content.getAttribute('viewBox') || viewBox || '0 0 ' + ' ' + (height || size)+ ' '+(width || size);
         svg.setAttribute('viewBox', viewBox);
         svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
         // TODO(dfreedm): `pointer-events: none` works around https://crbug.com/370136
