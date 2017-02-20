@@ -55,6 +55,8 @@ iconset.applyIcon(iconNode, 'car');
 
 I've added one more feture - now you can apply a custom viewBox. 
 
-For instance: <iron-iconset-svg name="set-name" view-box="0 0 300 50">
+For instance: 
+
+    <iron-iconset-svg name="set-name" view-box="0 0 300 50">
 
 
